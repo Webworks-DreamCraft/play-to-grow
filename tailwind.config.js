@@ -5,8 +5,14 @@ export default {
     extend: {
       colors: {
         "palm-leaf": "#f2fbea",
-        "wheat-field": "#3D1B0B",
-        "sage": "#A1A178"
+        "wheat-field-light": "#EFDC98",
+        "wheat-field-middle": "#D89428",
+        "wheat-field-dark": "#3D1B0B",
+        "sage": "#A1A178",
+        "error-red-light": "#FFF0F0",
+        "error-red-dark": "#D64751",
+        "success-green": "#5CB82A"
+
       },
       fontFamily: {
         patua: ["'Patua One', serif"],
