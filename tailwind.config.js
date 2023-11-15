@@ -6,6 +6,7 @@ export default {
       colors: {
         "palm-leaf": "#f2fbea",
         "wheat-field": "#3D1B0B",
+        "sage": "#A1A178"
       },
       fontFamily: {
         patua: ["'Patua One', serif"],
