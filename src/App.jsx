@@ -2,7 +2,7 @@ const App = () => {
 
   return (
     <>
-      <h1 className="bg-slate-600">webworks</h1>
+      <h1 className="bg-slate-600">Play To Grow</h1>
     </>
   )
 }
