@@ -1,7 +1,6 @@
 import Logo from "./reusables/Logo"
 
-const Footer = () => {
-  return (
+const Footer = () => (
     <section className="flex flex-col font-prata bg-palm-leaf">
       <section className="flex justify-center mt-8">
         <Logo width="232" height="238"/>
@@ -22,6 +21,5 @@ const Footer = () => {
       </section>
     </section>
   )
-}
 
 export default Footer
