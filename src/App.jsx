@@ -1,4 +1,5 @@
 import Footer from "./components/Footer"
+import IntakeForm from "./components/IntakeForm"
 
 const App = () => {
 
@@ -7,6 +8,7 @@ const App = () => {
       <section className="md:container mx-auto bg-palm-leaf">
         <p className="text-wheat-field">Play to Grow</p>
       </section>
+        <IntakeForm />
         <Footer />
     </>
   )
