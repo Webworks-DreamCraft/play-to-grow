@@ -2,7 +2,9 @@ const App = () => {
 
   return (
     <>
-      <h1 className="bg-slate-600">Play To Grow</h1>
+      <section className="md:container mx-auto bg-palm-leaf">
+        <p className="text-wheat-field">Play to Grow</p>
+      </section>
     </>
   )
 }
