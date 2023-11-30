@@ -1,8 +1,16 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const TextInput = ({ label, type, name, onChange }) => {
+const TextInput = ({ label, type, name, onChange, errorSignal }) => {
 
   const [focused, setFocused] = useState(false);
+
+  useEffect(() => {
+    if (errorSignal === false) {
+      setFocused(false)
+    } else {
+      setFocused(true)
+    }
+  }, [errorSignal])
 
   const handleFocus = (e) => {
     setFocused(true);
@@ -12,13 +20,13 @@ const TextInput = ({ label, type, name, onChange }) => {
     <section focused={focused.toString()}>
       <label className="">{label}</label>
       <input
-        className="invalid:border-pink-500 invalid:text-pink-600 invalid:[&[focused=true]]:bg-red-400"
+        className="[&[focused=true]]:bg-red-400"
         type={type}
         name={name}
         onChange={onChange}
-        onBlur={handleFocus}
+        // onBlur={handleFocus}
         focused={focused.toString()}
-        required={true}
+        // required={true}
       />
     </section>
   );

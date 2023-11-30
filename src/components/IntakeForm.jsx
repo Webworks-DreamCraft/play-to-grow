@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
-import TextInput from "./reusables/TextInput"
+import TextInput from "./reusables/TextInput";
 import RadioInput from "./reusables/RadioInput";
 
 const IntakeForm = () => {
+  const [errorSignal, setErrorSignal] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    phone: false,
+    concern: false,
+    interest: false,
+    diagnoses: false,
+    message: false,
+  });
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
@@ -11,7 +21,7 @@ const IntakeForm = () => {
     concern: "",
     interest: "",
     diagnoses: "",
-    message: ""
+    message: "",
   });
 
   const validatePhone = (event) => {
@@ -26,11 +36,20 @@ const IntakeForm = () => {
   const changeHandler = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => ({ ...prevState, [name]: value }));
+    setErrorSignal((prevState) => ({ ...prevState, [name]: false }));
   };
 
   const submitHandler = (event) => {
+    const formArray = Object.entries(formState);
+    formArray.forEach((entry) => {
+      if (entry[1].length === 0) {
+        setErrorSignal((prevState) => ({ ...prevState, [entry[0]]: true }));
+      } else {
+        setErrorSignal((prevState) => ({ ...prevState, [entry[0]]: false }));
+      }
+    });
+    console.log(errorSignal);
     event.preventDefault();
-    console.log(formState);
   };
 
   return (
@@ -41,28 +60,28 @@ const IntakeForm = () => {
         via email within 3-to-5 business days. From there, we can decide if Play
         to Grow is the right fit for your child.
       </p>
-      <form 
-        className="flex flex-col"
-        onSubmit={submitHandler}
-      >
+      <form className="flex flex-col" onSubmit={submitHandler}>
         <h2>Step 1: Contact Information</h2>
-        <TextInput 
+        <TextInput
           label="First Name"
           type="text"
           name="firstName"
           onChange={changeHandler}
+          errorSignal={errorSignal.firstName}
         />
         <TextInput
           label="Last Name"
           type="text"
           name="lastName"
           onChange={changeHandler}
+          errorSignal={errorSignal.lastName}
         />
         <TextInput
           label="Email"
           type="email"
           name="email"
           onChange={changeHandler}
+          errorSignal={errorSignal.email}
         />
         <label htmlFor="phone">
           Phone
@@ -78,88 +97,102 @@ const IntakeForm = () => {
         <RadioInput
           name="concern"
           value="Expressive Language (What child says)"
-          checked={formState.concern === "Expressive Language (What child says)" ? true : false}
+          checked={
+            formState.concern === "Expressive Language (What child says)"
+              ? true
+              : false
+          }
           onChange={changeHandler}
         />
-          <RadioInput
-            name="concern"
-            value="Receptive Language (What child understands)"
-            checked={formState.concern === "Receptive Language (What child understands)" ? true : false}
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="concern"
-            value="Articulation (Sound Pronunciation)"
-            checked={formState.concern === "Articulation (Sound Pronunciation)" ? true : false}
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="concern"
-            value="Combination"
-            checked={formState.concern === "Combination" ? true : false}
-            onChange={changeHandler}
-          />
+        <RadioInput
+          name="concern"
+          value="Receptive Language (What child understands)"
+          checked={
+            formState.concern === "Receptive Language (What child understands)"
+              ? true
+              : false
+          }
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="concern"
+          value="Articulation (Sound Pronunciation)"
+          checked={
+            formState.concern === "Articulation (Sound Pronunciation)"
+              ? true
+              : false
+          }
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="concern"
+          value="Combination"
+          checked={formState.concern === "Combination" ? true : false}
+          onChange={changeHandler}
+        />
         <p>I am Interested In * </p>
-          <RadioInput
-            name="interest"
-            value="In-home Services"
-            checked={formState.interest === "In-home Services" ? true : false}
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="interest"
-            value="Consultative Services"
-            checked={
-              formState.interest === "Consultative Services" ? true : false
-            }
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="interest"
-            value="Daycare / Preschool Services"
-            checked={
-              formState.interest === "Daycare / Preschool Services"
-                ? true
-                : false
-            }
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="interest"
-            value="Other"
-            checked={formState.interest === "Other" ? true : false}
-            onChange={changeHandler}
-          />
+        <RadioInput
+          name="interest"
+          value="In-home Services"
+          checked={formState.interest === "In-home Services" ? true : false}
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="interest"
+          value="Consultative Services"
+          checked={
+            formState.interest === "Consultative Services" ? true : false
+          }
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="interest"
+          value="Daycare / Preschool Services"
+          checked={
+            formState.interest === "Daycare / Preschool Services" ? true : false
+          }
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="interest"
+          value="Other"
+          checked={formState.interest === "Other" ? true : false}
+          onChange={changeHandler}
+        />
         <p>Diagnoses *</p>
-          <RadioInput
-            name="diagnoses"
-            value="Autism Spectrum Disorder"
-            checked={formState.diagnoses === "Autism Spectrum Disorder" ? true : false}
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="diagnoses"
-            value="Phonological Disorder"
-            checked={formState.diagnoses === "Phonological Disorder" ? true : false}
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="diagnoses"
-            value="Developmental Delay"
-            type="checkbox"
-            checked={formState.diagnoses === "Developmental Delay" ? true : false}
-            onChange={changeHandler}
-          />
-          <RadioInput
-            name="diagnoses"
-            value="Other"
-            type="checkbox"
-            checked={formState.diagnoses === "Other" ? true : false}
-            onChange={changeHandler}
-          />
+        <RadioInput
+          name="diagnoses"
+          value="Autism Spectrum Disorder"
+          checked={
+            formState.diagnoses === "Autism Spectrum Disorder" ? true : false
+          }
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="diagnoses"
+          value="Phonological Disorder"
+          checked={
+            formState.diagnoses === "Phonological Disorder" ? true : false
+          }
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="diagnoses"
+          value="Developmental Delay"
+          type="checkbox"
+          checked={formState.diagnoses === "Developmental Delay" ? true : false}
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name="diagnoses"
+          value="Other"
+          type="checkbox"
+          checked={formState.diagnoses === "Other" ? true : false}
+          onChange={changeHandler}
+        />
         <label>
           Tell Me About Your Child *
-          <textarea 
+          <textarea
             name="message"
             value={formState.message}
             onChange={changeHandler}
