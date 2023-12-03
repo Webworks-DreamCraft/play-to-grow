@@ -1,33 +1,33 @@
 import { useState, useEffect } from "react"
 
-const TextInput = ({ label, type, name, onChange, errorSignal }) => {
+const TextInput = ({ label, type, name, onChange, errorSignal, pattern }) => {
 
-  const [focused, setFocused] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
     if (errorSignal === false) {
-      setFocused(false)
+      setIsEmpty(false)
     } else {
-      setFocused(true)
+      setIsEmpty(true)
     }
   }, [errorSignal])
 
-  const handleFocus = (e) => {
-    setFocused(true);
-  }
-
   return (
-    <section focused={focused.toString()}>
-      <label className="">{label}</label>
+    <section
+      empty={isEmpty.toString()}
+      className="flex flex-col font-prata py-3 rounded-[10px] [&[empty=true]]:mb-3 [&[empty=true]]:bg-error-light"
+     >
+      <label className="pb-2 text-xs">{label}</label>
       <input
-        className="[&[focused=true]]:bg-red-400"
+        className="p-3 rounded-lg border-[1px] border-sage"
         type={type}
         name={name}
         onChange={onChange}
-        // onBlur={handleFocus}
-        focused={focused.toString()}
-        // required={true}
       />
+      <p 
+        className="[&[empty=false]]:hidden pt-2 text-error-dark text-xs"
+        empty={isEmpty.toString()}
+      >Please enter required information</p>
     </section>
   );
 };

@@ -5,7 +5,7 @@ const App = () => {
 
   return (
     <>
-      <section className="md:container mx-auto bg-palm-leaf">
+      <section className="md:container mx-auto flex justify-center bg-palm-leaf">
         <IntakeForm />
       </section>
         <Footer />

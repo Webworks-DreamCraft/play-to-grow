@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import TextInput from "./reusables/TextInput";
-import RadioInput from "./reusables/RadioInput";
+import RadioSection from "./reusables/RadioSection";
+import PhoneInput from "./PhoneInput";
+import EmailInput from "./EmailInput";
+import TextArea from "./TextArea";
 
 const IntakeForm = () => {
   const [errorSignal, setErrorSignal] = useState({
@@ -24,15 +27,6 @@ const IntakeForm = () => {
     message: "",
   });
 
-  const validatePhone = (event) => {
-    if (event.key === "Backspace") {
-    } else if (formState.phone.length >= 10) {
-      event.preventDefault();
-    } else if (!/[0-9]/.test(event.key)) {
-      event.preventDefault();
-    }
-  };
-
   const changeHandler = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => ({ ...prevState, [name]: value }));
@@ -40,6 +34,7 @@ const IntakeForm = () => {
   };
 
   const submitHandler = (event) => {
+    event.preventDefault();
     const formArray = Object.entries(formState);
     formArray.forEach((entry) => {
       if (entry[1].length === 0) {
@@ -49,157 +44,96 @@ const IntakeForm = () => {
       }
     });
     console.log(errorSignal);
-    event.preventDefault();
   };
 
   return (
-    <section className="flex flex-col">
-      <h2>Reach Out To Us</h2>
-      <p>
+    <section className="flex flex-col w-11/12 justify-center">
+      <h2 className="font-patua text-4xl text-center pt-16 pb-3">Reach Out To Us</h2>
+      <p className="font-prata text-center text-lg pb-9">
         Once you fill out the intake and contact form, I will reach out to you
         via email within 3-to-5 business days. From there, we can decide if Play
         to Grow is the right fit for your child.
       </p>
-      <form className="flex flex-col" onSubmit={submitHandler}>
-        <h2>Step 1: Contact Information</h2>
-        <TextInput
-          label="First Name"
-          type="text"
-          name="firstName"
-          onChange={changeHandler}
-          errorSignal={errorSignal.firstName}
-        />
-        <TextInput
-          label="Last Name"
-          type="text"
-          name="lastName"
-          onChange={changeHandler}
-          errorSignal={errorSignal.lastName}
-        />
-        <TextInput
-          label="Email"
-          type="email"
-          name="email"
-          onChange={changeHandler}
-          errorSignal={errorSignal.email}
-        />
-        <label htmlFor="phone">
-          Phone
-          <input
+      <section className="flex justify-center bg-white border-[0.5px] rounded-[10px]">
+
+        <form className="flex flex-col w-11/12" onSubmit={submitHandler}>
+          <h2 className="font-patua pt-4">Step 1: Contact Information</h2>
+          <TextInput
+            label="First Name"
             type="text"
-            name="phone"
+            name="firstName"
             onChange={changeHandler}
-            onKeyDown={validatePhone}
+            errorSignal={errorSignal.firstName}
           />
-        </label>
-        <h2>Step 2: Intake Form</h2>
-        <p>What is Your Main Area of Concern *</p>
-        <RadioInput
-          name="concern"
-          value="Expressive Language (What child says)"
-          checked={
-            formState.concern === "Expressive Language (What child says)"
-              ? true
-              : false
-          }
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="concern"
-          value="Receptive Language (What child understands)"
-          checked={
-            formState.concern === "Receptive Language (What child understands)"
-              ? true
-              : false
-          }
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="concern"
-          value="Articulation (Sound Pronunciation)"
-          checked={
-            formState.concern === "Articulation (Sound Pronunciation)"
-              ? true
-              : false
-          }
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="concern"
-          value="Combination"
-          checked={formState.concern === "Combination" ? true : false}
-          onChange={changeHandler}
-        />
-        <p>I am Interested In * </p>
-        <RadioInput
-          name="interest"
-          value="In-home Services"
-          checked={formState.interest === "In-home Services" ? true : false}
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="interest"
-          value="Consultative Services"
-          checked={
-            formState.interest === "Consultative Services" ? true : false
-          }
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="interest"
-          value="Daycare / Preschool Services"
-          checked={
-            formState.interest === "Daycare / Preschool Services" ? true : false
-          }
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="interest"
-          value="Other"
-          checked={formState.interest === "Other" ? true : false}
-          onChange={changeHandler}
-        />
-        <p>Diagnoses *</p>
-        <RadioInput
-          name="diagnoses"
-          value="Autism Spectrum Disorder"
-          checked={
-            formState.diagnoses === "Autism Spectrum Disorder" ? true : false
-          }
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="diagnoses"
-          value="Phonological Disorder"
-          checked={
-            formState.diagnoses === "Phonological Disorder" ? true : false
-          }
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="diagnoses"
-          value="Developmental Delay"
-          type="checkbox"
-          checked={formState.diagnoses === "Developmental Delay" ? true : false}
-          onChange={changeHandler}
-        />
-        <RadioInput
-          name="diagnoses"
-          value="Other"
-          type="checkbox"
-          checked={formState.diagnoses === "Other" ? true : false}
-          onChange={changeHandler}
-        />
-        <label>
-          Tell Me About Your Child *
-          <textarea
-            name="message"
-            value={formState.message}
+          <TextInput
+            label="Last Name"
+            type="text"
+            name="lastName"
             onChange={changeHandler}
+            errorSignal={errorSignal.lastName}
           />
-        </label>
-        <button type="submit">Let's Work Together</button>
-      </form>
+          <EmailInput
+            label="Email"
+            name="email"
+            onChange={changeHandler}
+            errorSignal={errorSignal.email}
+            setErrorSignal={setErrorSignal}
+            setFormState={setFormState}
+          />
+            <PhoneInput
+              label="Phone"
+              type="text"
+              name="phone"
+              onChange={changeHandler}
+              formState={formState}
+              errorSignal={errorSignal.phone}
+            />
+          <h2 className="font-patua">Step 2: Intake Form</h2>
+          <RadioSection 
+            changeHandler={changeHandler}
+            formState={formState}
+            errorSignal={errorSignal}
+            name="concern"
+            title="What is Your Main Area of Concern"
+            firstOption="Expressive Language (What child says)"
+            secondOption="Receptive Language (What child understands)"
+            thirdOption="Articulation (Sound Pronunciation)"
+            fourthOption="Combination"
+          />
+          <RadioSection 
+            changeHandler={changeHandler}
+            formState={formState}
+            errorSignal={errorSignal}
+            name="interest"
+            title="I am Interested In"
+            firstOption="In-home Services"
+            secondOption="Consultative Services"
+            thirdOption="Daycare / Preschool Services"
+            fourthOption="Other"
+          />
+          <RadioSection 
+            changeHandler={changeHandler}
+            formState={formState}
+            errorSignal={errorSignal}
+            name="diagnoses"
+            title="Diagnoses"
+            firstOption="Autism Spectrum Disorder"
+            secondOption="Phonological Disorder"
+            thirdOption="Developmental Delay"
+            fourthOption="Other"
+          />
+            <TextArea
+              name="message"
+              label="Tell Me About Your Child"
+              errorSignal={errorSignal.message}
+              onChange={changeHandler}
+            />
+          <button 
+            type="submit"
+            className="font-prata"
+          >Let's Work Together</button>
+        </form>
+      </section>
     </section>
   );
 };

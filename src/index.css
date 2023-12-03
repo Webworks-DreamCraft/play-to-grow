@@ -8,3 +8,7 @@
 textarea:focus, input:focus{
   outline: none;
 }
+
+input:invalid {
+
+}
