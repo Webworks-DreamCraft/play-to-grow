@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #f2fbea;
+}
 
 textarea:focus, input:focus{
   outline: none;

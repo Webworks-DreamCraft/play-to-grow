@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import TextInput from "./reusables/TextInput";
 import RadioSection from "./reusables/RadioSection";
-import Logo from "./reusables/Logo"
+import Logo from "./reusables/Logo";
 import PhoneInput from "./PhoneInput";
 import EmailInput from "./EmailInput";
 import TextArea from "./TextArea";
@@ -88,15 +88,14 @@ const IntakeForm = () => {
             <p className="pl-4">Gainesville, Florida</p>
           </section>
         </section>
-        <section className="hidden md:block pt-80">
-          <Logo width="421" height="431"/>
+        <section className="hidden md:block pt-56">
+          <Logo width="421" height="431" />
         </section>
       </section>
       <section className="flex justify-center w-full bg-white border-[0.5px] md:w-[1377px] md:mt-16 rounded-[10px]">
         <form className="flex flex-col w-11/12" onSubmit={submitHandler}>
           <h2 className="font-patua pt-4">Step 1: Contact Information</h2>
           <section className="xl:flex justify-between">
-
             <TextInput
               label="First Name"
               type="text"
@@ -113,7 +112,6 @@ const IntakeForm = () => {
             />
           </section>
           <section className="xl:flex justify-between">
-
             <EmailInput
               label="Email"
               name="email"
@@ -132,45 +130,50 @@ const IntakeForm = () => {
             />
           </section>
           <h2 className="font-patua">Step 2: Intake Form</h2>
-          <RadioSection
-            changeHandler={changeHandler}
-            formState={formState}
-            errorSignal={errorSignal}
-            name="concern"
-            title="What is Your Main Area of Concern"
-            firstOption="Expressive Language (What child says)"
-            secondOption="Receptive Language (What child understands)"
-            thirdOption="Articulation (Sound Pronunciation)"
-            fourthOption="Combination"
-          />
-          <RadioSection
-            changeHandler={changeHandler}
-            formState={formState}
-            errorSignal={errorSignal}
-            name="interest"
-            title="I am Interested In"
-            firstOption="In-home Services"
-            secondOption="Consultative Services"
-            thirdOption="Daycare / Preschool Services"
-            fourthOption="Other (Specify in text box below)"
-          />
-          <RadioSection
-            changeHandler={changeHandler}
-            formState={formState}
-            errorSignal={errorSignal}
-            name="diagnoses"
-            title="Diagnoses"
-            firstOption="Autism Spectrum Disorder"
-            secondOption="Phonological Disorder"
-            thirdOption="Developmental Delay"
-            fourthOption="Other (Specify in text box below)"
-          />
-          <TextArea
-            name="message"
-            label="Tell Me About Your Child"
-            errorSignal={errorSignal.message}
-            onChange={changeHandler}
-          />
+          <section className="flex">
+            <section>
+              <RadioSection
+                changeHandler={changeHandler}
+                formState={formState}
+                errorSignal={errorSignal}
+                name="concern"
+                title="What is Your Main Area of Concern"
+                firstOption="Expressive Language (What child says)"
+                secondOption="Receptive Language (What child understands)"
+                thirdOption="Articulation (Sound Pronunciation)"
+                fourthOption="Combination"
+              />
+              <RadioSection
+                changeHandler={changeHandler}
+                formState={formState}
+                errorSignal={errorSignal}
+                name="interest"
+                title="I am Interested In"
+                firstOption="In-home Services"
+                secondOption="Consultative Services"
+                thirdOption="Daycare / Preschool Services"
+                fourthOption="Other (Specify in text box below)"
+              />
+              <RadioSection
+                changeHandler={changeHandler}
+                formState={formState}
+                errorSignal={errorSignal}
+                name="diagnoses"
+                title="Diagnoses"
+                firstOption="Autism Spectrum Disorder"
+                secondOption="Phonological Disorder"
+                thirdOption="Developmental Delay"
+                fourthOption="Other (Specify in text box below)"
+              />
+              <TextArea
+                name="message"
+                label="Tell Me About Your Child"
+                errorSignal={errorSignal.message}
+                onChange={changeHandler}
+              />
+            </section>
+            <section className="xl:h-full xl:w-2/12"></section>
+          </section>
           <section className="pt-4 pb-8">
             <button
               type="submit"

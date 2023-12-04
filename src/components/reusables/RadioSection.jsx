@@ -12,7 +12,6 @@ const RadioSection = ({
   thirdOption,
   fourthOption,
 }) => {
-
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
@@ -24,45 +23,61 @@ const RadioSection = ({
   }, [errorSignal]);
 
   return (
-    <section 
+    <section
       empty={isEmpty.toString()}
-      className="[&[empty=true]]:bg-error-light font-prata flex flex-col text-xs my-4"
+      className="[&[empty=true]]:bg-error-light font-prata flex flex-col text-xs my-4 xl:my-8"
     >
       <section className="flex">
-      <p className="pb-2">{title}</p>
-        <p 
+        <p className="pb-2">{title}</p>
+        <p
           className="px-1 text-xs [&[empty=true]]:text-base text-error-dark"
           empty={isEmpty.toString()}
-        >*</p>
+        >
+          *
+        </p>
       </section>
-      <RadioInput
-        name={name}
-        value={firstOption}
-        checked={formState[name] === firstOption ? true : false}
-        onChange={changeHandler}
-      />
-      <RadioInput
-        name={name}
-        value={secondOption}
-        checked={formState[name] === secondOption ? true : false}
-        onChange={changeHandler}
-      />
-      <RadioInput
-        name={name}
-        value={thirdOption}
-        checked={formState[name] === thirdOption ? true : false}
-        onChange={changeHandler}
-      />
-      <RadioInput
-        name={name}
-        value={fourthOption}
-        checked={formState[name] === fourthOption ? true : false}
-        onChange={changeHandler}
-      />
-      <p 
+      <section className="xl:grid xl:grid-cols-2">
+        <section className="">
+          <RadioInput
+            name={name}
+            value={firstOption}
+            checked={formState[name] === firstOption ? true : false}
+            onChange={changeHandler}
+          />
+        </section>
+        <section>
+          <RadioInput
+            name={name}
+            value={secondOption}
+            checked={formState[name] === secondOption ? true : false}
+            onChange={changeHandler}
+          />
+        </section>
+      </section>
+      <section className="xl:grid xl:grid-cols-2">
+        <section className="">
+          <RadioInput
+            name={name}
+            value={thirdOption}
+            checked={formState[name] === thirdOption ? true : false}
+            onChange={changeHandler}
+          />
+        </section>
+        <section>
+          <RadioInput
+            name={name}
+            value={fourthOption}
+            checked={formState[name] === fourthOption ? true : false}
+            onChange={changeHandler}
+          />
+        </section>
+      </section>
+      <p
         className="[&[empty=false]]:hidden py-2 text-error-dark text-xs"
         empty={isEmpty.toString()}
-      >Please choose at least one option</p>
+      >
+        Please choose at least one option
+      </p>
     </section>
   );
 };

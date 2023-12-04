@@ -1,6 +1,6 @@
 const RadioInput = ({ name, onChange, value, checked}) => {
   return (
-    <section className="py-2 ">
+    <section className="py-2 xl:py-4">
         <input
           className="accent-wheat-field-dark"
           type="radio"
@@ -10,7 +10,7 @@ const RadioInput = ({ name, onChange, value, checked}) => {
           checked={checked}
           />
       <label 
-        className="[&[dark=true]]:text-wheat-field-dark text-gray-choice px-2"
+        className="inline text-gray-choice px-2 [&[dark=true]]:text-wheat-field-dark"
         dark={checked.toString()}
       >
           {value}
