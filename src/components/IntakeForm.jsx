@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TextInput from "./reusables/TextInput";
 import RadioSection from "./reusables/RadioSection";
 import Logo from "./reusables/Logo";
@@ -44,7 +44,10 @@ const IntakeForm = () => {
         setErrorSignal((prevState) => ({ ...prevState, [entry[0]]: false }));
       }
     });
-    console.log(errorSignal);
+    if (formState.phone.length < 10) {
+      setErrorSignal((prevState) => ({...prevState, phone: true}));
+      return
+    }
   };
 
   return (
@@ -88,8 +91,10 @@ const IntakeForm = () => {
             <p className="pl-4">Gainesville, Florida</p>
           </section>
         </section>
-        <section className="hidden md:block pt-56">
-          <Logo width="421" height="431" />
+        <section className="hidden md:flex pt-56">
+          <section>
+            <Logo width="421" height="431" />
+          </section>
         </section>
       </section>
       <section className="flex justify-center w-full bg-white border-[0.5px] md:w-[1377px] md:mt-16 rounded-[10px]">

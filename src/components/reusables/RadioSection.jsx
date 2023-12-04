@@ -12,6 +12,7 @@ const RadioSection = ({
   thirdOption,
   fourthOption,
 }) => {
+  
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
@@ -37,44 +38,36 @@ const RadioSection = ({
         </p>
       </section>
       <section className="xl:grid xl:grid-cols-2">
-        <section className="">
-          <RadioInput
-            name={name}
-            value={firstOption}
-            checked={formState[name] === firstOption ? true : false}
-            onChange={changeHandler}
-          />
-        </section>
-        <section>
-          <RadioInput
-            name={name}
-            value={secondOption}
-            checked={formState[name] === secondOption ? true : false}
-            onChange={changeHandler}
-          />
-        </section>
+        <RadioInput
+          name={name}
+          value={firstOption}
+          checked={formState[name] === firstOption ? true : false}
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name={name}
+          value={secondOption}
+          checked={formState[name] === secondOption ? true : false}
+          onChange={changeHandler}
+        />
       </section>
       <section className="xl:grid xl:grid-cols-2">
-        <section className="">
-          <RadioInput
-            name={name}
-            value={thirdOption}
-            checked={formState[name] === thirdOption ? true : false}
-            onChange={changeHandler}
-          />
-        </section>
-        <section>
-          <RadioInput
-            name={name}
-            value={fourthOption}
-            checked={formState[name] === fourthOption ? true : false}
-            onChange={changeHandler}
-          />
-        </section>
+        <RadioInput
+          name={name}
+          value={thirdOption}
+          checked={formState[name] === thirdOption ? true : false}
+          onChange={changeHandler}
+        />
+        <RadioInput
+          name={name}
+          value={fourthOption}
+          checked={formState[name] === fourthOption ? true : false}
+          onChange={changeHandler}
+        />
       </section>
       <p
-        className="[&[empty=false]]:hidden py-2 text-error-dark text-xs"
         empty={isEmpty.toString()}
+        className="[&[empty=false]]:hidden py-2 text-error-dark text-xs"
       >
         Please choose at least one option
       </p>

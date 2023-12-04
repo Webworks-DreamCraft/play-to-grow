@@ -1,5 +1,4 @@
-const RadioInput = ({ name, onChange, value, checked}) => {
-  return (
+const RadioInput = ({ name, onChange, value, checked}) => (
     <section className="py-2 xl:py-4">
         <input
           className="accent-wheat-field-dark"
@@ -17,6 +16,5 @@ const RadioInput = ({ name, onChange, value, checked}) => {
       </label>
     </section>
   )
-}
 
 export default RadioInput;
