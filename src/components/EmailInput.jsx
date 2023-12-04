@@ -16,7 +16,6 @@ const EmailInput = ({
 
   const emailValidate = (event) => {
     setIsEmailValid(emailPattern.test(event.target.value));
-    console.log(isEmailValid);
   };
 
   const changeHandler = (event) => {
