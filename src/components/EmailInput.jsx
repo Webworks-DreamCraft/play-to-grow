@@ -1,16 +1,23 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
-const EmailInput = ({ label, type, name, errorSignal, setFormState, setErrorSignal }) => {
-
+const EmailInput = ({
+  label,
+  type,
+  name,
+  errorSignal,
+  setFormState,
+  setErrorSignal,
+}) => {
   const [isEmpty, setIsEmpty] = useState(false);
-  const [isEmailValid, setIsEmailValid] = useState()
+  const [isEmailValid, setIsEmailValid] = useState();
 
-  const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+  const emailPattern =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
   const emailValidate = (event) => {
-    setIsEmailValid(emailPattern.test(event.target.value))
-    console.log(isEmailValid)
-  }
+    setIsEmailValid(emailPattern.test(event.target.value));
+    console.log(isEmailValid);
+  };
 
   const changeHandler = (event) => {
     emailValidate(event);
@@ -21,34 +28,78 @@ const EmailInput = ({ label, type, name, errorSignal, setFormState, setErrorSign
 
   useEffect(() => {
     if (errorSignal === false) {
-      setIsEmpty(false)
+      setIsEmpty(false);
     } else {
-      setIsEmpty(true)
+      setIsEmpty(true);
     }
-  }, [errorSignal])
+  }, [errorSignal]);
 
   return (
-    <section 
-      valid={isEmailValid || isEmailValid === false ? isEmailValid.toString() : null}
-      className="
-      [&[valid=false]]:bg-red-400
-      [&[valid=true]]:bg-green-400
-      flex
-      flex-col
-      font-prata
-      py-3
-      
-      "
+    <section
+      empty={isEmpty.toString()}
+      className="flex flex-col font-prata py-3 rounded-[10px] [&[empty=true]]:mb-3 [&[empty=true]]:bg-error-light"
     >
       <label className="pb-2 text-xs">{label}</label>
+      <i className="flex justify-end">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          className="[&[valid=true]]:flex w-6 h-6 hidden absolute m-3 fill-success "
+          valid={
+            isEmailValid || isEmailValid === false
+              ? isEmailValid.toString()
+              : null
+          }
+        >
+          <path
+            fillRule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+            clipRule="evenodd"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          className="[&[valid=false]]:flex w-6 h-6 hidden absolute m-3 fill-error-dark"
+          valid={
+            isEmailValid || isEmailValid === false
+              ? isEmailValid.toString()
+              : null
+          }
+        >
+          <path
+            fillRule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </i>
       <input
-        className="[&[empty=true]]:bg-red-400 bg-white p-3 rounded-lg border-[1px] border-sage"
+        className=" 
+          [&[valid=false]]:border-error-dark
+          [&[valid=true]]:border-success 
+          bg-white 
+          p-3 
+          rounded-lg 
+          border-[1px] 
+          border-sage
+        "
         type={type}
         name={name}
         onChange={changeHandler}
-        empty={isEmpty.toString()}
         pattern={emailPattern}
+        valid={
+          isEmailValid || isEmailValid === false
+            ? isEmailValid.toString()
+            : null
+        }
       />
+      <p
+        className="[&[empty=false]]:hidden pt-2 text-error-dark text-xs"
+        empty={isEmpty.toString()}
+      >
+        Please enter required information
+      </p>
     </section>
   );
 };

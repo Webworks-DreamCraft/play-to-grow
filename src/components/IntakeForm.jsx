@@ -47,7 +47,7 @@ const IntakeForm = () => {
   };
 
   return (
-    <section className="flex flex-col w-11/12 justify-center">
+    <section className="flex flex-col w-11/12 justify-center text-wheat-field-dark">
       <h2 className="font-patua text-4xl text-center pt-16 pb-3">Reach Out To Us</h2>
       <p className="font-prata text-center text-lg pb-9">
         Once you fill out the intake and contact form, I will reach out to you

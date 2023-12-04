@@ -18,7 +18,7 @@ export default {
         "sage": "#A1A178",
         "error-light": "#FFF0F0",
         "error-dark": "#D64751",
-        "success-green": "#5CB82A"
+        "success": "#5CB82A"
 
       },
       fontFamily: {
