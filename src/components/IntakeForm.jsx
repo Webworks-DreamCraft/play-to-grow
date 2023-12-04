@@ -95,36 +95,42 @@ const IntakeForm = () => {
       <section className="flex justify-center w-full bg-white border-[0.5px] md:w-[1377px] md:mt-16 rounded-[10px]">
         <form className="flex flex-col w-11/12" onSubmit={submitHandler}>
           <h2 className="font-patua pt-4">Step 1: Contact Information</h2>
-          <TextInput
-            label="First Name"
-            type="text"
-            name="firstName"
-            onChange={changeHandler}
-            errorSignal={errorSignal.firstName}
-          />
-          <TextInput
-            label="Last Name"
-            type="text"
-            name="lastName"
-            onChange={changeHandler}
-            errorSignal={errorSignal.lastName}
-          />
-          <EmailInput
-            label="Email"
-            name="email"
-            onChange={changeHandler}
-            errorSignal={errorSignal.email}
-            setErrorSignal={setErrorSignal}
-            setFormState={setFormState}
-          />
-          <PhoneInput
-            label="Phone"
-            type="text"
-            name="phone"
-            onChange={changeHandler}
-            formState={formState}
-            errorSignal={errorSignal.phone}
-          />
+          <section className="xl:flex justify-between">
+
+            <TextInput
+              label="First Name"
+              type="text"
+              name="firstName"
+              onChange={changeHandler}
+              errorSignal={errorSignal.firstName}
+            />
+            <TextInput
+              label="Last Name"
+              type="text"
+              name="lastName"
+              onChange={changeHandler}
+              errorSignal={errorSignal.lastName}
+            />
+          </section>
+          <section className="xl:flex justify-between">
+
+            <EmailInput
+              label="Email"
+              name="email"
+              onChange={changeHandler}
+              errorSignal={errorSignal.email}
+              setErrorSignal={setErrorSignal}
+              setFormState={setFormState}
+            />
+            <PhoneInput
+              label="Phone"
+              type="text"
+              name="phone"
+              onChange={changeHandler}
+              formState={formState}
+              errorSignal={errorSignal.phone}
+            />
+          </section>
           <h2 className="font-patua">Step 2: Intake Form</h2>
           <RadioSection
             changeHandler={changeHandler}

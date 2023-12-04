@@ -24,7 +24,7 @@ const TextInput = ({ label, name, onChange, errorSignal, formState }) => {
   return (
     <section 
       empty={isEmpty.toString()}
-      className="flex flex-col font-prata py-3 rounded-[10px] [&[empty=true]]:mb-3 [&[empty=true]]:bg-error-light"
+      className="flex flex-col font-prata py-3 xl:w-10/12 xl:mx-1 rounded-[10px] [&[empty=true]]:mb-3 [&[empty=true]]:bg-error-light"
     >
       <section className="flex">
         <label className="pb-2 text-xs">{label}</label>
