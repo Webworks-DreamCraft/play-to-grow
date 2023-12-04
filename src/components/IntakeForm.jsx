@@ -1,7 +1,6 @@
 import { useState } from "react";
 import TextInput from "./reusables/TextInput";
 import RadioSection from "./reusables/RadioSection";
-import Logo from "./reusables/Logo";
 import PhoneInput from "./PhoneInput";
 import EmailInput from "./EmailInput";
 import TextArea from "./TextArea";
@@ -92,7 +91,6 @@ const IntakeForm = () => {
           </section>
         </section>
         <section className="hidden md:flex pt-56">
-            {/* <Logo width="421" height="431" /> */}
             <img src="../public/logo.png" width="421" height="431"/>
         </section>
       </section>

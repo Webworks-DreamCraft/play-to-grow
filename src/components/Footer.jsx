@@ -1,5 +1,3 @@
-import Logo from "./reusables/Logo"
-
 const Footer = () => (
     <section className="flex flex-col font-prata bg-palm-leaf">
       <section className="flex justify-center mt-8">
