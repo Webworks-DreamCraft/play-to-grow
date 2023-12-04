@@ -1,12 +1,12 @@
 import Footer from "./components/Footer"
-import IntakeForm from "./components/IntakeForm"
+import IntakeFormContainer from "./components/intakeForm/IntakeFormContainer"
 
 const App = () => {
 
   return (
     <>
       <section className="md:container mx-auto flex justify-center bg-palm-leaf">
-        <IntakeForm />
+        <IntakeFormContainer />
       </section>
         <Footer />
     </>
