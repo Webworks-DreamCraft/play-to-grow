@@ -39,7 +39,13 @@ const EmailInput = ({
       empty={isEmpty.toString()}
       className="flex flex-col font-prata py-3 rounded-[10px] [&[empty=true]]:mb-3 [&[empty=true]]:bg-error-light"
     >
-      <label className="pb-2 text-xs">{label}</label>
+      <section className="flex">
+        <label className="pb-2 text-xs">{label}</label>
+        <p 
+          className="px-1 text-xs [&[empty=true]]:text-base text-error-dark"
+          empty={isEmpty.toString()}
+        >*</p>
+      </section>
       <i className="flex justify-end">
         <svg
           xmlns="http://www.w3.org/2000/svg"

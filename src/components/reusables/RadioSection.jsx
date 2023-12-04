@@ -26,9 +26,15 @@ const RadioSection = ({
   return (
     <section 
       empty={isEmpty.toString()}
-      className="[&[empty=true]]:bg-red-400 font-prata flex flex-col text-xs"
+      className="[&[empty=true]]:bg-error-light font-prata flex flex-col text-xs my-4"
     >
-      <p>{title}</p>
+      <section className="flex">
+      <p className="pb-2">{title}</p>
+        <p 
+          className="px-1 text-xs [&[empty=true]]:text-base text-error-dark"
+          empty={isEmpty.toString()}
+        >*</p>
+      </section>
       <RadioInput
         name={name}
         value={firstOption}
@@ -53,6 +59,10 @@ const RadioSection = ({
         checked={formState[name] === fourthOption ? true : false}
         onChange={changeHandler}
       />
+      <p 
+        className="[&[empty=false]]:hidden py-2 text-error-dark text-xs"
+        empty={isEmpty.toString()}
+      >Please choose at least one option</p>
     </section>
   );
 };

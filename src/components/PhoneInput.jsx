@@ -2,13 +2,13 @@ import { useState, useEffect } from "react"
 
 const TextInput = ({ label, name, onChange, errorSignal, formState }) => {
 
-  const [focused, setFocused] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
     if (errorSignal === false) {
-      setFocused(false)
+      setIsEmpty(false)
     } else {
-      setFocused(true)
+      setIsEmpty(true)
     }
   }, [errorSignal])
 
@@ -23,18 +23,27 @@ const TextInput = ({ label, name, onChange, errorSignal, formState }) => {
 
   return (
     <section 
-      focused={focused.toString()}
-      className="flex flex-col font-prata py-3"
+      empty={isEmpty.toString()}
+      className="flex flex-col font-prata py-3 rounded-[10px] [&[empty=true]]:mb-3 [&[empty=true]]:bg-error-light"
     >
-      <label className="text-xs pb-2">{label}</label>
+      <section className="flex">
+        <label className="pb-2 text-xs">{label}</label>
+        <p 
+          className="px-1 text-xs [&[empty=true]]:text-base text-error-dark"
+          empty={isEmpty.toString()}
+        >*</p>
+      </section>
       <input
-        className="[&[focused=true]]:bg-red-400 p-3 rounded-lg border-[1px] border-sage"
+        className="p-3 rounded-lg border-[1px] border-sage"
         type="text"
         name={name}
         onChange={onChange}
-        focused={focused.toString()}
         onKeyDown={validatePhone}
       />
+      <p 
+        className="[&[empty=false]]:hidden pt-2 text-error-dark text-xs"
+        empty={isEmpty.toString()}
+      >Please enter required information</p>
     </section>
   );
 };
