@@ -91,7 +91,7 @@ const IntakeForm = () => {
           </section>
         </section>
         <section className="hidden md:flex pt-56">
-            <img src="../public/logo.png" width="421" height="431"/>
+            <img src="logo.png" width="421" height="431"/>
         </section>
       </section>
       <section className="flex justify-center w-full bg-white border-[0.5px] md:w-[1377px] md:mt-16 rounded-[10px]">
