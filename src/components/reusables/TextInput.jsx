@@ -18,7 +18,7 @@ const TextInput = ({ label, type, name, onChange, errorSignal, pattern }) => {
       className="flex flex-col xl:w-10/12 xl:mx-1 font-prata py-3 rounded-[10px] [&[empty=true]]:mb-3 [&[empty=true]]:bg-error-light"
      >
       <section className="flex">
-        <label className="pb-2 text-xs">{label}</label>
+        <label className="pb-2 text-xs lg:text-base">{label}</label>
         <p 
           className="px-1 text-xs [&[empty=true]]:text-base text-error-dark"
           empty={isEmpty.toString()}

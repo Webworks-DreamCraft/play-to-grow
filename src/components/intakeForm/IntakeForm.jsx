@@ -7,8 +7,8 @@ import TextArea from "../TextArea"
 const IntakeForm = ({ submitHandler, changeHandler, errorSignal, setErrorSignal, formState, setFormState }) => {
   return (
     <form className="flex flex-col w-11/12" onSubmit={submitHandler}>
-          <h2 className="font-patua pt-4">Step 1: Contact Information</h2>
-          <section className="xl:flex justify-between">
+          <h2 className="font-patua lg:text-2xl md:pt-8">Step 1: Contact Information</h2>
+          <section className="xl:flex justify-between pt-4 md:pt-6">
             <TextInput
               label="First Name"
               type="text"
@@ -42,7 +42,7 @@ const IntakeForm = ({ submitHandler, changeHandler, errorSignal, setErrorSignal,
               errorSignal={errorSignal.phone}
             />
           </section>
-          <h2 className="font-patua">Step 2: Intake Form</h2>
+          <h2 className="font-patua lg:text-2xl pt-12 md:pt-20">Step 2: Intake Form</h2>
           <section className="flex">
             <section>
               <RadioSection

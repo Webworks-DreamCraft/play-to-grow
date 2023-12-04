@@ -23,14 +23,14 @@ const TextArea = ({ label, name, onChange, errorSignal }) => {
         className="flex flex-col text-xs rounded-[10px ] [&[empty=true]]:py-2 font-prata [&[empty=true]]:bg-error-light"
       >
         <section className="flex">
-          <label className="pb-2">{label}</label>
+          <label className="pb-2 lg:text-base">{label}</label>
           <p 
             className="px-1 text-xs [&[empty=true]]:text-base text-error-dark"
             empty={isEmpty.toString()}
           >*</p>
         </section>
         <textarea
-          className="rounded-lg p-4 border-[1px] border-sage h-64 resize-none"
+          className="rounded-lg p-4 border-[1px] border-sage h-64 resize-none lg:text-base"
           name={name}
           onChange={onChange}
           empty={isEmpty.toString()}

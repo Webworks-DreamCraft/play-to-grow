@@ -12,7 +12,7 @@ const RadioSection = ({
   thirdOption,
   fourthOption,
 }) => {
-  
+
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const RadioSection = ({
   return (
     <section
       empty={isEmpty.toString()}
-      className="[&[empty=true]]:bg-error-light font-prata flex flex-col text-xs my-4 xl:my-8"
+      className="[&[empty=true]]:bg-error-light font-prata flex flex-col text-xs lg:text-base my-4 xl:my-8"
     >
       <section className="flex">
         <p className="pb-2">{title}</p>
