@@ -25,6 +25,8 @@ const IntakeFormContainer = () => {
     message: "",
   });
 
+  const [isEmailValid, setIsEmailValid] = useState();
+
   emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
 
   const sendEmail = async () => {
@@ -52,17 +54,25 @@ const IntakeFormContainer = () => {
         setErrorSignal((prevState) => ({ ...prevState, [entry[0]]: false }));
       }
     });
+
     const errorArray = Object.values(errorSignal);
     if (errorArray.includes(true) || errorArray.includes(null)) {
       console.log(`exiting`);
       return;
     }
-    console.log(`empty test`);
 
     if (formState.phone.length < 10) {
       setErrorSignal((prevState) => ({ ...prevState, phone: true }));
+      console.log(`exiting from phone`)
       return;
     }
+
+    if (!isEmailValid) {
+      console.log(`exiting from email`)
+      return
+    }
+
+    console.log(`sending email`);
     // sendEmail();
   };
 
@@ -77,6 +87,8 @@ const IntakeFormContainer = () => {
           setErrorSignal={setErrorSignal}
           setFormState={setFormState}
           formState={formState}
+          isEmailValid={isEmailValid}
+          setIsEmailValid={setIsEmailValid}
         />
       </section>
     </section>
