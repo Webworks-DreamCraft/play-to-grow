@@ -26,7 +26,7 @@ const EmailInput = ({
   };
 
   useEffect(() => {
-    if (errorSignal === false) {
+    if (errorSignal === false || errorSignal === null) {
       setIsEmpty(false);
     } else {
       setIsEmpty(true);
