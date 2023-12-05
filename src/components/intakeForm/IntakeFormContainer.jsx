@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs, { init } from "@emailjs/browser";
 import IntakeFormInfo from "./IntakeFormInfo"
 import IntakeForm from "./IntakeForm";
 
@@ -24,6 +25,13 @@ const IntakeFormContainer = () => {
     message: "",
   });
 
+  emailjs.init('R6h6Q4s9wiR5Npvlx');
+
+  const sendEmail = async () => {
+    const response = await emailjs.send("GMAIL", "contact", formState);
+    console.log(response)
+  }
+
   const changeHandler = (event) => {
     const { name, value } = event.target;
     setFormState((prevState) => ({ ...prevState, [name]: value }));
@@ -44,6 +52,7 @@ const IntakeFormContainer = () => {
       setErrorSignal((prevState) => ({...prevState, phone: true}));
       return
     }
+    sendEmail();
   };
 
   return (
