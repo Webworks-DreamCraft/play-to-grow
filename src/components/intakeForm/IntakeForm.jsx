@@ -13,6 +13,7 @@ const IntakeForm = ({
   setFormState,
   isEmailValid,
   setIsEmailValid,
+  errorMessage
 }) => {
   return (
     <form className="flex flex-col w-11/12" onSubmit={submitHandler}>
@@ -110,6 +111,12 @@ const IntakeForm = ({
           Let's Work Together
         </button>
       </section>
+      {errorMessage ? 
+          <section className=" flex justify-center font-prata py-3 rounded-[10px] mb-3 bg-error-light">
+            <p className="pt-2 text-center text-error-dark text-sm">{errorMessage}</p>
+          </section> 
+          : null
+        }
     </form>
   );
 };

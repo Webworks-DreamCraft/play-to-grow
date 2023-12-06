@@ -26,12 +26,23 @@ const IntakeFormContainer = () => {
   });
 
   const [isEmailValid, setIsEmailValid] = useState();
+  const [errorMessage, setErrorMessage] = useState();
 
+  // this key needs to change when accounts change
   emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
 
   const sendEmail = async () => {
-    const response = await emailjs.send("GMAIL", "contact", formState);
-    console.log(response);
+    try {
+      const response = await emailjs.send("GMAIL", "contact", formState);
+      if (response.status === 200) {
+        setErrorMessage(null);
+        // useNavigate here when react-router is setup
+      } else {
+        setErrorMessage("Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com")
+      }
+    } catch (err) {
+      setErrorMessage("Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com")
+    }
   };
 
   const changeHandler = (event) => {
@@ -57,23 +68,17 @@ const IntakeFormContainer = () => {
 
     const errorArray = Object.values(errorSignal);
     if (errorArray.includes(true) || errorArray.includes(null)) {
-      console.log(`exiting`);
       return;
     }
-
     if (formState.phone.length < 10) {
       setErrorSignal((prevState) => ({ ...prevState, phone: true }));
-      console.log(`exiting from phone`)
       return;
     }
-
     if (!isEmailValid) {
-      console.log(`exiting from email`)
       return
     }
 
-    console.log(`sending email`);
-    // sendEmail();
+    sendEmail();
   };
 
   return (
@@ -89,6 +94,7 @@ const IntakeFormContainer = () => {
           formState={formState}
           isEmailValid={isEmailValid}
           setIsEmailValid={setIsEmailValid}
+          errorMessage={errorMessage}
         />
       </section>
     </section>
