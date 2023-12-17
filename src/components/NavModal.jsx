@@ -21,7 +21,7 @@ const NavModal = ({ isModalShowing, closeModal }) => (
       {/* Mobile Menu Items */}
       <section className="flex flex-col items-center font-prata">
         <section className="flex flex-col w-10/12 text-wheat-field-dark">
-          <ul className="flex flex-col w-full my-4 xs:my-8 text-2xl list-inside pl-4 xs:pl-8">
+          <ul className="flex flex-col w-full my-2 xs:my-4 text-2xl list-inside pl-2 xs:pl-4">
             <li onClick={closeModal} className="mx-2 my-6 py-1">
               <Link to="/">Home</Link>
             </li>
@@ -33,9 +33,9 @@ const NavModal = ({ isModalShowing, closeModal }) => (
             </li>
           </ul>
           {/* Schedule Consultation Button */}
-          <a href="#form">
+          <a className="mx-auto">
             <button
-              className="bg-wheat-field-middle hover:bg-wheat-field-light text-wheat-field-dark rounded-lg py-3 px-4 max-w-[275px] mx-auto text-lg"
+              className="bg-wheat-field-middle hover:bg-wheat-field-light text-wheat-field-dark rounded-lg py-3 px-4 max-w-[275px] text-md"
               onClick={closeModal}
             >
               Schedule Consultation
@@ -43,7 +43,7 @@ const NavModal = ({ isModalShowing, closeModal }) => (
           </a>
         </section>
         {/* Logo image */}
-        <section className="flex justify-center mt-20">
+        <section className="flex justify-center mt-6 xs:mt-12">
           <a href="#" onClick={closeModal}>
             <img src={Logo}></img>
           </a>
