@@ -3,7 +3,7 @@ import Logo from "../../public/logo_large.png";
 import { HashLink } from "react-router-hash-link";
 
 const Navbar = ({ openModal }) => (
-  <section className="bg-palm-leaf sticky top-0">
+  <section className="bg-palm-leaf sticky top-0 z-50">
     <section className="md:container mx-auto">
       <nav className="flex p-2 font-prata sm:text-xs">
         <a href="#" alt="Play to Grow Logo" className="max-w-[60px] mr-auto">
