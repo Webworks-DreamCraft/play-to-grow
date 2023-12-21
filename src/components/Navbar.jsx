@@ -6,9 +6,9 @@ const Navbar = ({ openModal }) => (
   <section className="bg-palm-leaf sticky top-0 z-50">
     <section className="md:container mx-auto">
       <nav className="flex p-2 font-prata sm:text-xs">
-        <a href="#" alt="Play to Grow Logo" className="max-w-[60px] mr-auto">
-          <img src={Logo} />
-        </a>
+        <Link to="/" className="max-w-[60px] mr-auto">
+          <img src={Logo} alt="Play to Grow Logo" />
+        </Link>
         <svg
           onClick={openModal}
           xmlns="http://www.w3.org/2000/svg"
