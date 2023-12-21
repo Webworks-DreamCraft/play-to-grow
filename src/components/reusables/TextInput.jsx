@@ -5,7 +5,7 @@ const TextInput = ({ label, type, name, onChange, errorSignal, pattern }) => {
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
-    if (errorSignal === false) {
+    if (errorSignal === false || errorSignal === null) {
       setIsEmpty(false)
     } else {
       setIsEmpty(true)

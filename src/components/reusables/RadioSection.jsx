@@ -16,7 +16,7 @@ const RadioSection = ({
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
-    if (errorSignal[name] === false) {
+    if (errorSignal[name] === false || errorSignal[name] === null) {
       setIsEmpty(false);
     } else {
       setIsEmpty(true);

@@ -38,7 +38,7 @@ const IntakeFormInfo = () => (
             <p className="pl-4">Gainesville, Florida</p>
           </section>
         </section>
-        <section className="hidden md:flex pt-56">
+        <section className="hidden md:flex pt-80">
             <img src="logo.png" width="421" height="431"/>
         </section>
       </section>

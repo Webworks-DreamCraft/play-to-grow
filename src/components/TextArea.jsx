@@ -5,7 +5,7 @@ const TextArea = ({ label, name, onChange, errorSignal }) => {
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
-    if (errorSignal === false) {
+    if (errorSignal === false || errorSignal === null) {
       setIsEmpty(false)
     } else {
       setIsEmpty(true)
