@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Prata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Prata&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth
+}
 
 body {
   background-color: #f2fbea;
