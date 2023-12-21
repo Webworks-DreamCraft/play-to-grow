@@ -16,9 +16,10 @@ export default {
         "wheat-field-middle": "#D89428",
         "wheat-field-dark": "#3D1B0B",
         "sage": "#A1A178",
-        "error-red-light": "#FFF0F0",
-        "error-red-dark": "#D64751",
-        "success-green": "#5CB82A"
+        "error-light": "#FFF0F0",
+        "error-dark": "#D64751",
+        "success": "#5CB82A",
+        "gray-choice": "#00000066"
 
       },
       fontFamily: {
