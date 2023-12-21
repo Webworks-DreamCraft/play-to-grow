@@ -5,8 +5,8 @@ import { HashLink } from "react-router-hash-link";
 const Navbar = ({ openModal }) => (
   <section className="bg-palm-leaf sticky top-0 z-50">
     <section className="md:container mx-auto">
-      <nav className="flex p-2 font-prata sm:text-xs">
-        <Link to="/" className="max-w-[60px] mr-auto">
+      <nav className="flex p-2 font-prata sm:text-sm">
+        <Link to="/" className="max-w-[70px] mr-auto">
           <img src={Logo} alt="Play to Grow Logo" />
         </Link>
         <svg
@@ -20,19 +20,19 @@ const Navbar = ({ openModal }) => (
         <ul className="hidden sm:flex sm:flex-row mx-10 list-outside items-center sm:mx-0">
           <Link
             to="/"
-            className="mr-7 py-2 w-[55px] text-center hover:border-wheat-field-dark hover:border-b-2"
+            className="mr-7 py-2 w-[65px] text-center hover:border-wheat-field-dark hover:border-b-2"
           >
             Home
           </Link>
           <Link
             to="/services"
-            className="mr-8 py-2 w-[55px] text-center hover:border-wheat-field-dark hover:border-b-2"
+            className="mr-8 py-2 w-[65px] text-center hover:border-wheat-field-dark hover:border-b-2"
           >
             Services
           </Link>
           <Link
             to="/about"
-            className="mr-8 py-2 w-[55px] text-center hover:border-wheat-field-dark hover:border-b-2"
+            className="mr-8 py-2 w-[65px] text-center hover:border-wheat-field-dark hover:border-b-2"
           >
             About Us
           </Link>
@@ -40,7 +40,7 @@ const Navbar = ({ openModal }) => (
         <section className="hidden sm:flex sm:items-center sm:mr-8">
           {/* Hashlink allows navigation to #form in Home page */}
           <HashLink to="/#form">
-            <p className="hidden sm:block bg-wheat-field-middle hover:bg-wheat-field-light text-wheat-field-dark rounded-lg py-2 px-4">
+            <p className="hidden sm:block bg-wheat-field-middle hover:bg-wheat-field-light text-wheat-field-dark rounded-xl py-3 px-4">
               Schedule Consultation
             </p>
           </HashLink>
