@@ -31,7 +31,7 @@ const Home = () => {
     <section className="bg-landing bg-no-repeat bg-cover bg-center lg:bg-palm-leaf lg:bg-none">
       <section className="bg-none bg-no-repeat bg-cover bg-center px-3 lg:bg-landing md:container mx-auto md:px-0 md:flex md:justify-between md:pt-32 md:pb-32 xl:pt-28">
         <section className="md:w-1/2 md:p-2 xl:pr-8">
-          <h1 className="font-patua font-normal text-4xl text-center leading-snug text-wheat-field-dark xs:text-[44px] sm:text-5xl sm:pb-8 sm:pt-8 md:pb-4 md:text-left lg:pt-4 lg:text-6xl xl:pt-4 xl:text-7xl xl:leading-tight">
+          <h1 className="font-patua font-normal text-4xl text-center leading-snug text-wheat-field-dark xs:text-[44px] sm:text-5xl sm:pb-8 sm:pt-8 md:pb-4 md:text-left lg:pt-4 lg:text-6xl xl:pt-6 xl:text-7xl xl:leading-tight">
             Play to Grow Speech Therapy
           </h1>
           <p className="font-prata text-wheat-field-dark text-center text-lg mt-4 md:text-sm md:text-left">
@@ -65,7 +65,7 @@ const Home = () => {
               <div key={index}>
                 <img
                   style={{ width: "100%" }}
-                  src={`../../../public/slide_images/${fadeImage.fileName}`}
+                  src={`/slide_images/${fadeImage.fileName}`}
                   className="rounded-xl"
                 />
               </div>
