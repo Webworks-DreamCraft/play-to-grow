@@ -6,4 +6,14 @@
 
 html {
   scroll-behavior: smooth;
+body {
+  background-color: #f2fbea;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+input:invalid {
+
 }

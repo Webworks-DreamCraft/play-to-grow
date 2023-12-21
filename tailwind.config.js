@@ -19,6 +19,11 @@ export default {
         "error-red-light": "#FFF0F0",
         "error-red-dark": "#D64751",
         "success-green": "#5CB82A",
+        "sage": "#A1A178",
+        "error-light": "#FFF0F0",
+        "error-dark": "#D64751",
+        "success": "#5CB82A",
+        "gray-choice": "#00000066"
       },
       fontFamily: {
         patua: ["'Patua One', serif"],
