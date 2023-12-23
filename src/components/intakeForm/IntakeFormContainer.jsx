@@ -1,5 +1,5 @@
 import { useState } from "react";
-import emailjs, { init } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import IntakeFormInfo from "./IntakeFormInfo";
 import IntakeForm from "./IntakeForm";
 
@@ -33,6 +33,7 @@ const IntakeFormContainer = () => {
 
   const sendEmail = async () => {
     try {
+      // the first 2 parameters would need to change here possibly
       const response = await emailjs.send("GMAIL", "contact", formState);
       if (response.status === 200) {
         setErrorMessage(null);

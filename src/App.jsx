@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import Navbar from "./components/Navbar";
 import NavModal from "./components/NavModal";
 import Footer from "./components/Footer";
+import Confirmation from "./components/pages/Confirmation";
 
 const App = () => {
   const [isModalShowing, setIsModalShowing] = useState(false);
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
+        <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
       <Footer />
     </>
