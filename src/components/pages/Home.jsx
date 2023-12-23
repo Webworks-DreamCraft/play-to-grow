@@ -79,9 +79,6 @@ const Home = () => {
           </p>
         </a>
       </section>
-        <section className="md:container mx-auto flex justify-center">
-          <IntakeFormContainer />
-        </section>
     </section>
   );
 };
