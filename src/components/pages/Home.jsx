@@ -1,5 +1,6 @@
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import IntakeFormContainer from "../intakeForm/IntakeFormContainer";
 import "./Home.css";
 
 const Home = () => {
