@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom"
+
 const Confirmation = () => {
+  const navigate = useNavigate();
   return (
     <section className="pt-24 md:bg-confirmation bg-no-repeat bg-origin-padding bg-cover bg-top lg:bg-palm-leaf text-wheat-field-dark text-center">
       <section className="px-3 md:container mx-auto">
@@ -10,6 +13,7 @@ const Confirmation = () => {
         </p>
         <button
           type="submit"
+          onClick={() => navigate("/")}
           className="font-prata text-lg bg-wheat-field-middle md:mb-12 py-3 px-8 rounded-[10px]"
         >
           Home
