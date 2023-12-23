@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import IntakeFormInfo from "./IntakeFormInfo";
 import IntakeForm from "./IntakeForm";
+import { useNavigate } from "react-router-dom";
 
 const IntakeFormContainer = () => {
   const [errorSignal, setErrorSignal] = useState({
@@ -27,6 +28,7 @@ const IntakeFormContainer = () => {
 
   const [isEmailValid, setIsEmailValid] = useState();
   const [errorMessage, setErrorMessage] = useState();
+  const navigate = useNavigate();
 
   // this key needs to change when accounts change
   emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
@@ -37,7 +39,7 @@ const IntakeFormContainer = () => {
       const response = await emailjs.send("GMAIL", "contact", formState);
       if (response.status === 200) {
         setErrorMessage(null);
-        // useNavigate here when react-router is setup
+        navigate("/confirmation");
       } else {
         setErrorMessage("Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com")
       }
