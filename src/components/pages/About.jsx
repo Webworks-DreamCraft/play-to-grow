@@ -1,8 +1,7 @@
 import { HashLink } from "react-router-hash-link";
 
-const About = () => {
-  return (
-    <section className="bg-aboutBackground bg-auto bg-bottom">
+const About = () => (
+    <section className="md:bg-aboutBackground bg-auto md:bg-bottom">
       <section className="text-wheat-field-dark md:container mx-auto">
         <section className="flex justify-center text-center bg-aboutHeader bg-cover bg-center text-palm-leaf px-3 py-14">
           <section className="max-w-3xl">
@@ -51,6 +50,5 @@ const About = () => {
       </section>
     </section>
   );
-};
 
 export default About;
