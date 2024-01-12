@@ -31,6 +31,8 @@ export default {
       },
       backgroundImage: {
         landing: "url('../public/desktop_images/Landing.png')",
+        aboutHeader: "url('/about_header.png')",
+        aboutBackground: "url('/desktop_images/about_background.png')",
       },
     },
   },
