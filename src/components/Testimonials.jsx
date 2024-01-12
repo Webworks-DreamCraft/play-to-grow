@@ -42,9 +42,9 @@ const Testimonials = () => {
         </h2>
         <section className="mx-auto max-w-[760px]">
           <p className="text-center font-prata text-lg pb-6 md:text-left">
-            My greatest areas of interest and experience lie in the following
-            domains. Click the button below to view a more thorough description
-            of my services.
+            Heartwarming testimonials from clients who have experienced
+            remarkable transformations in their communication skills and
+            abilities.
           </p>
         </section>
 

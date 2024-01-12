@@ -1,6 +1,7 @@
 import { Fade } from "react-slideshow-image";
 import Expertise from "../Expertise";
 import Testimonials from "../Testimonials";
+import IntakeFormContainer from "../intakeForm/IntakeFormContainer";
 import "react-slideshow-image/dist/styles.css";
 import "./Home.css";
 
@@ -86,6 +87,10 @@ const Home = () => {
 
       <Expertise />
       <Testimonials />
+
+      <section className="mx-auto md:container p-4 2xl:px-20" id="form">
+        <IntakeFormContainer />
+      </section>
     </section>
   );
 };

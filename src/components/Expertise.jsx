@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
 import "swiper/css";
+import { HashLink } from "react-router-hash-link";
 
 const Expertise = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -99,26 +100,28 @@ const Expertise = () => {
                   {expertise.title}
                 </h3>
                 <p className="font-prata text-sm">{expertise.paragraph}</p>
-                <section className="bottom-6 absolute flex items-center">
-                  <p className="font-prata text-wheat-field-middle mt-1">
-                    Learn More
-                  </p>
-                  <section className="pl-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
-                  </section>
+                <section className="bottom-6 absolute">
+                  <Link to="/services" className="flex items-center">
+                    <p className="font-prata text-wheat-field-middle mt-1">
+                      Learn More
+                    </p>
+                    <section className="pl-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="#D89428"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </section>
+                  </Link>
                 </section>
               </div>
             </SwiperSlide>

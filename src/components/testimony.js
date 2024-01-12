@@ -20,24 +20,6 @@ const testimonials = [
     testimony:
       "Katie, we are immensely grateful for the remarkable support your speech-language pathology practice has offered our child with autism. Your team's dedication and expertise have yielded outstanding communication progress",
   },
-  {
-    client: "Parent's Name",
-    description: "Description",
-    testimony:
-      "Katie, we are immensely grateful for the remarkable support your speech-language pathology practice has offered our child with autism. Your team's dedication and expertise have yielded outstanding communication progress",
-  },
-  {
-    client: "Parent's Name",
-    description: "Description",
-    testimony:
-      "Katie, we are immensely grateful for the remarkable support your speech-language pathology practice has offered our child with autism. Your team's dedication and expertise have yielded outstanding communication progress",
-  },
-  {
-    client: "Parent's Name",
-    description: "Description",
-    testimony:
-      "Katie, we are immensely grateful for the remarkable support your speech-language pathology practice has offered our child with autism. Your team's dedication and expertise have yielded outstanding communication progress",
-  },
 ];
 
 export default testimonials;
