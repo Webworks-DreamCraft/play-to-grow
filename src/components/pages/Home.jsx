@@ -1,6 +1,6 @@
 import { Fade } from "react-slideshow-image";
-import { Link } from "react-router-dom";
 import Expertise from "../Expertise";
+import Testimonials from "../Testimonials";
 import "react-slideshow-image/dist/styles.css";
 import "./Home.css";
 
@@ -85,6 +85,7 @@ const Home = () => {
       </section>
 
       <Expertise />
+      <Testimonials />
     </section>
   );
 };

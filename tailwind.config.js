@@ -24,6 +24,9 @@ export default {
         "error-dark": "#D64751",
         success: "#5CB82A",
         "gray-choice": "#00000066",
+        "sage-light": "#E9E9DE",
+        "wheat-field-very-light": "#FDFAED",
+        "sage-border": "#D6D6C0",
       },
       fontFamily: {
         patua: ["'Patua One', serif"],
@@ -32,6 +35,7 @@ export default {
       backgroundImage: {
         landing: "url('../public/desktop_images/Landing.png')",
         expertise: "url('../public/desktop_images/Expertise_bg.png')",
+        testimonials: "url('../public/desktop_images/Testimonials_bg.png')",
       },
     },
   },

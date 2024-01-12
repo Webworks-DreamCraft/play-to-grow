@@ -58,7 +58,7 @@ const Expertise = () => {
   ];
 
   return (
-    <section className="bg-expertise bg-no-repeat bg-cover bg-center lg:bg-palm-leaf">
+    <section className="bg-expertise bg-no-repeat bg-cover bg-center lg:bg-none lg:bg-sage-light">
       <section className="bg-none bg-no-repeat bg-cover bg-center px-3 py-16 lg:bg-expertise md:container mx-auto md:px-0 md:pt-16 md:pb-32">
         <h2 className="text-center font-patua text-3xl xs:text-4xl md:text-6xl pb-6 pt-6 xl:text-7xl">
           Areas of Expertise
@@ -78,6 +78,7 @@ const Expertise = () => {
             </p>
           </Link>
         </section>
+
         <Swiper
           spaceBetween={slideSpace}
           slidesPerView={slides}
@@ -92,15 +93,33 @@ const Expertise = () => {
                 style={{
                   backgroundImage: `url(/slide_images/${expertise.background})`,
                 }}
-                className="min-h-[400px] pt-[100px] rounded-xl px-4 xs:px-8 border-b-2 border-wheat-field-light bg-cover bg-no-repeat"
+                className="min-h-[450px] xs:min-h-[400px] pt-[100px] rounded-xl px-4 xs:px-8 border-b-2 border-wheat-field-light bg-cover bg-no-repeat"
               >
                 <h3 className="font-patua mb-2 text-xl pt-4">
                   {expertise.title}
                 </h3>
                 <p className="font-prata text-sm">{expertise.paragraph}</p>
-                <p className="font-prata text-wheat-field-middle mt-4 bottom-6 absolute">
-                  Learn More &rarr;
-                </p>
+                <section className="bottom-6 absolute flex items-center">
+                  <p className="font-prata text-wheat-field-middle mt-1">
+                    Learn More
+                  </p>
+                  <section className="pl-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </section>
+                </section>
               </div>
             </SwiperSlide>
           ))}
