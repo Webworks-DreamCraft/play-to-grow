@@ -31,7 +31,7 @@ const Home = () => {
   ];
 
   return (
-    <section>
+    <section id="home">
       <section className="bg-landing bg-no-repeat bg-cover bg-center lg:bg-palm-leaf lg:bg-none">
         <section className="bg-none bg-no-repeat bg-cover bg-center px-3 lg:bg-landing md:container mx-auto md:px-0 md:flex md:pt-32 md:pb-32 xl:pt-28">
           <section className="md:w-1/2 md:p-2 xl:px-8">
