@@ -34,6 +34,7 @@ export default {
         aboutHeader: "url('/about_header.png')",
         servicesHeader: "url('/services_header.png')",
         aboutBackground: "url('/desktop_images/about_background.png')",
+        servicesBackground: "url('/desktop_images/services_background.png')",
       },
     },
   },
