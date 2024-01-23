@@ -41,10 +41,14 @@ const IntakeFormContainer = () => {
         setErrorMessage(null);
         navigate("/confirmation");
       } else {
-        setErrorMessage("Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com")
+        setErrorMessage(
+          "Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com"
+        );
       }
     } catch (err) {
-      setErrorMessage("Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com")
+      setErrorMessage(
+        "Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com"
+      );
     }
   };
 
@@ -78,14 +82,14 @@ const IntakeFormContainer = () => {
       return;
     }
     if (!isEmailValid) {
-      return
+      return;
     }
 
     sendEmail();
   };
 
   return (
-    <section className="flex flex-col md:flex-row w-11/12 justify-center md:justify-between text-wheat-field-dark">
+    <section className="flex flex-col md:flex-row justify-center md:justify-between text-wheat-field-dark">
       <IntakeFormInfo />
       <section className="flex justify-center w-full bg-white border-[0.5px] md:w-[1377px] md:mt-16 rounded-[10px]">
         <IntakeForm

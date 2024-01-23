@@ -13,13 +13,14 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.17",
     "@emailjs/browser": "^3.11.0",
+    "@headlessui/react": "^1.7.17",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
     "react-router-hash-link": "^2.4.3",
-    "react-slideshow-image": "^4.3.0"
+    "react-slideshow-image": "^4.3.0",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

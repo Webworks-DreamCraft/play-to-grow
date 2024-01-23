@@ -1,6 +1,7 @@
 import { Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Logo from "../../public/logo_large.png";
 
 const NavModal = ({ isModalShowing, closeModal }) => (
@@ -23,7 +24,7 @@ const NavModal = ({ isModalShowing, closeModal }) => (
         <section className="flex flex-col w-10/12 text-wheat-field-dark">
           <ul className="flex flex-col w-full my-2 xs:my-4 text-2xl list-inside pl-2 xs:pl-4">
             <li onClick={closeModal} className="mx-2 my-6 py-1">
-              <Link to="/">Home</Link>
+              <HashLink to="/#">Home</HashLink>
             </li>
             <li onClick={closeModal} className="mx-2 my-6 py-1">
               <Link to="/services">Services</Link>

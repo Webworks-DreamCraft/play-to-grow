@@ -19,7 +19,10 @@ export default {
         "error-light": "#FFF0F0",
         "error-dark": "#D64751",
         "success": "#5CB82A",
-        "gray-choice": "#00000066"
+        "gray-choice": "#00000066",
+        "sage-light": "#E9E9DE",
+        "wheat-field-very-light": "#FDFAED",
+        "sage-border": "#D6D6C0",
       },
       fontFamily: {
         patua: ["'Patua One', serif"],
@@ -27,6 +30,8 @@ export default {
       },
       backgroundImage: {
         landing: "url('../public/desktop_images/Landing.png')",
+        expertise: "url('../public/desktop_images/Expertise_bg.png')",
+        testimonials: "url('../public/desktop_images/Testimonials_bg.png')",
         aboutHeader: "url('/about_header.png')",
         servicesHeader: "url('/services_header.png')",
         aboutBackground: "url('/desktop_images/about_background.png')",
