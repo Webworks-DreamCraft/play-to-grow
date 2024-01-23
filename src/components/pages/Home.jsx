@@ -3,6 +3,7 @@ import Expertise from "../Expertise";
 import Testimonials from "../Testimonials";
 import IntakeFormContainer from "../intakeForm/IntakeFormContainer";
 import "react-slideshow-image/dist/styles.css";
+import IntakeFormContainer from "../intakeForm/IntakeFormContainer";
 import "./Home.css";
 
 const Home = () => {
