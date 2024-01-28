@@ -30,12 +30,10 @@ const IntakeFormContainer = () => {
   const [errorMessage, setErrorMessage] = useState();
   const navigate = useNavigate();
 
-  // this key needs to change when accounts change
-  emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
+  emailjs.init(import.meta.env.VITE_PTG_MAIL);
 
   const sendEmail = async () => {
     try {
-      // the first 2 parameters would need to change here possibly
       const response = await emailjs.send("GMAIL", "contact", formState);
       if (response.status === 200) {
         setErrorMessage(null);
