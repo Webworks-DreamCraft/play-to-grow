@@ -11,8 +11,9 @@ const EmailInput = ({
 }) => {
   const [isEmpty, setIsEmpty] = useState(false);
 
-  const emailPattern =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  const emailPattern = new RegExp(
+"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+  );
 
   const emailValidate = (event) => {
     setIsEmailValid(emailPattern.test(event.target.value));
@@ -92,7 +93,6 @@ const EmailInput = ({
         type="text"
         name={name}
         onChange={changeHandler}
-        pattern={emailPattern}
         valid={
           isEmailValid || isEmailValid === false
             ? isEmailValid.toString()
