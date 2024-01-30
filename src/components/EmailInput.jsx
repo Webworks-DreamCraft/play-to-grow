@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const EmailInput = ({
   label,
-  type,
   name,
   errorSignal,
   setFormState,
@@ -90,7 +89,7 @@ const EmailInput = ({
           border-[1px] 
           border-sage
         "
-        type={type}
+        type="text"
         name={name}
         onChange={changeHandler}
         pattern={emailPattern}
