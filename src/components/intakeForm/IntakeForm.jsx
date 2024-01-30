@@ -81,7 +81,7 @@ const IntakeForm = ({
             firstOption="In-home Services"
             secondOption="Consultative Services"
             thirdOption="Daycare / Preschool Services"
-            fourthOption="Other (Specify in text box below)"
+            fourthOption="Other Interests (Specify in text box below)"
           />
           <RadioSection
             changeHandler={changeHandler}
