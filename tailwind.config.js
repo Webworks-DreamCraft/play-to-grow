@@ -35,6 +35,7 @@ export default {
         aboutHeader: "url('/about_header.png')",
         servicesHeader: "url('/services_header.png')",
         aboutBackground: "url('/desktop_images/about_background.png')",
+        footerBackground: "url('/desktop_images/footer_background.png')",
         servicesBackground: "url('/desktop_images/services_background.png')",
         confirmation: "url('../public/desktop_images/Confirmation.png')",
       },
