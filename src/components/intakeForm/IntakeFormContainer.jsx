@@ -37,7 +37,7 @@ const IntakeFormContainer = () => {
       const response = await emailjs.send("GMAIL", "contact", formState);
       if (response.status === 200) {
         setErrorMessage(null);
-        navigate("/confirmation");
+        navigate("/confirmation#");
       } else {
         setErrorMessage(
           "Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com"
