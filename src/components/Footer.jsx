@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <section className="flex flex-col font-prata bg-palm-leaf">
+  <section className="flex flex-col lg:bg-footerBackground bg-cover bg-center font-prata bg-palm-leaf">
     <section className="flex justify-center mt-8">
       <img src="logo.png" width="232" height="238"/>
     </section>

@@ -1,7 +1,7 @@
 import { HashLink } from "react-router-hash-link";
 
 const Services = () => (
-    <section className="md:bg-servicesBackground bg-auto md:bg-bottom">
+    <section className="md:bg-servicesBackground bg-no-repeat bg-cover bg-auto">
       <section className="text-wheat-field-dark md:container mx-auto">
         <section className="flex justify-center text-center bg-servicesHeader bg-cover bg-center text-palm-leaf px-3 py-14">
           <section className="max-w-3xl">

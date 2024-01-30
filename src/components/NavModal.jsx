@@ -35,12 +35,14 @@ const NavModal = ({ isModalShowing, closeModal }) => (
           </ul>
           {/* Schedule Consultation Button */}
           <a className="mx-auto">
-            <button
-              className="bg-wheat-field-middle hover:bg-wheat-field-light text-wheat-field-dark rounded-lg py-3 px-4 max-w-[275px] text-md"
-              onClick={closeModal}
-            >
-              Schedule Consultation
-            </button>
+            <HashLink to="/#form">
+              <button
+                className="bg-wheat-field-middle hover:bg-wheat-field-light text-wheat-field-dark rounded-lg py-3 px-4 max-w-[275px] text-md"
+                onClick={closeModal}
+              >
+                Schedule Consultation
+              </button>
+            </HashLink>
           </a>
         </section>
         {/* Logo image */}

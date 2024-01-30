@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const EmailInput = ({
   label,
-  type,
   name,
   errorSignal,
   setFormState,
@@ -12,8 +11,9 @@ const EmailInput = ({
 }) => {
   const [isEmpty, setIsEmpty] = useState(false);
 
-  const emailPattern =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  const emailPattern = new RegExp(
+"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+  );
 
   const emailValidate = (event) => {
     setIsEmailValid(emailPattern.test(event.target.value));
@@ -90,10 +90,9 @@ const EmailInput = ({
           border-[1px] 
           border-sage
         "
-        type={type}
+        type="text"
         name={name}
         onChange={changeHandler}
-        pattern={emailPattern}
         valid={
           isEmailValid || isEmailValid === false
             ? isEmailValid.toString()
