@@ -40,12 +40,12 @@ const IntakeFormContainer = () => {
         navigate("/confirmation#");
       } else {
         setErrorMessage(
-          "Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com"
+          "Something went wrong. Try again another time or email me directly: katie@playtogrowgainesville.com"
         );
       }
     } catch (err) {
       setErrorMessage(
-        "Something went wrong. Try again another time or email me directly: katiegonzalez@playtogrowgainesville.com"
+        "Something went wrong. Try again another time or email me directly: katie@playtogrowgainesville.com"
       );
     }
   };
