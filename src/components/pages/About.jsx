@@ -12,7 +12,7 @@ const About = () => (
         </p>
       </section>
     </section>
-    <section className="text-wheat-field-dark md:container mx-auto">
+    <section className="text-wheat-field-dark md:container mx-auto bg-[#F2FBEA]">
       <section className="text-center pt-14">
         <h2 className="font-patua text-[34px] md:text-6xl">
           Meet Your Care Providers
